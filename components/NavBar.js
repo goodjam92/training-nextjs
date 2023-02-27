@@ -7,13 +7,19 @@ export default function NavBar() {
   return (
     <nav>
       <Link href="/" legacyBehavior>
-        <a style={{ color: router.pathname === "/" ? "red" : "blue" }}>Home</a>
+        <a className={router.pathname === "/" ? "active" : ""}>Home</a>
       </Link>
       <Link href="/about" legacyBehavior>
-        <a style={{ color: router.pathname === "/about" ? "red" : "blue" }}>
-          about
-        </a>
+        <a className={router.pathname === "/about" ? "active" : ""}>about</a>
       </Link>
+      <style jsx>{`
+        a {
+          text-decoration: none;
+        }
+        .active {
+          color: tomato;
+        }
+      `}</style>
     </nav>
   );
 }
